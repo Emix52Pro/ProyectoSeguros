@@ -1,0 +1,288 @@
+    /* Estilo para la sección */
+    
+    .Auto {
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        /* Fondo oscuro para la imagen */
+    }
+    
+    .portada-imagen {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        display: block;
+        object-fit: cover;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        /* Agregar una sombra sutil para dar profundidad a la imagen */
+        transition: box-shadow 0.3s ease;
+        /* Transición para la animación de la sombra al pasar el mouse */
+    }
+    /* Estilo para crear la curva en la imagen */
+    
+    .portada-imagen::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Color negro con opacidad (0.4) para hacer la capa semi-transparente */
+        border-radius: 10px;
+        z-index: 20;
+        /* Colocar la capa detrás de la imagen */
+    }
+    /* Estilo para crear la ola en la parte inferior de la imagen */
+    
+    .portada-imagen::after {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        display: block;
+        object-fit: cover;
+        position: relative;
+        /* Agregar las transiciones */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .portada-imagen.loaded {
+        opacity: 1;
+        transform: scale(1);
+    }
+    /* Efecto de escala suave al pasar el mouse sobre la imagen */
+    
+    .portada-imagen:hover {
+        box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+        /* Aumentar la intensidad de la sombra al pasar el mouse */
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .portada-imagen {
+        animation: fadeIn 1s ease;
+        /* Duración y curva de aceleración para la animación de fundido */
+    }
+    /* Estilos para el contenido superpuesto */
+    
+    .hero-frase {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+        text-align: left;
+        color: white;
+        max-width: 40%;
+        padding: 20px;
+    }
+    
+    .hero-frase p {
+        font-size: 36px;
+        line-height: 1.6;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    p {
+        font-size: 48px;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .auto1 {
+        font-size: 48px;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .auto2,
+    .auto3 {
+        font-size: 30px;
+        font-family: 'Arial', sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        margin: 0;
+        padding: 0;
+    }
+    /* Estilos responsivos usando media queries */
+    
+    @media screen and (max-width: 768px) {
+        /* Agrega estilos para pantallas más pequeñas si es necesario */
+        .hero-frase {
+            max-width: 80%;
+            left: 10%;
+        }
+        .hero-frase p {
+            font-size: 32px;
+            /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+        }
+        .auto1 {
+            font-size: 36px;
+            /* Ajusta el tamaño de la fuente para el primer párrafo en pantallas más pequeñas */
+        }
+        .auto2,
+        .auto3 {
+            font-size: 20px;
+            /* Ajusta el tamaño de la fuente para los párrafos 2 y 3 en pantallas más pequeñas */
+        }
+        /* Máscara responsiva para el efecto de tipo curva en la imagen */
+        .portada-imagen::before {
+            height: 50px;
+            /* Ajusta el tamaño de la curva en pantallas más pequeñas */
+        }
+    }
+    /* Estilos para las tarjetas de información */
+    
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: -5px;
+        /* Reducimos aún más los márgenes negativos para juntar las cards */
+    }
+    
+    .card {
+        flex-basis: calc(15% - 25px);
+        /* Hace que las tarjetas tengan un tamaño más pequeño y se muestren en la misma línea */
+        margin: 50px;
+        /* Ajustamos el espacio entre las tarjetas */
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centra las imágenes horizontalmente */
+    }
+    
+    .card img {
+        flex: 1;
+        max-width: 100px;
+        /* Ajusta el tamaño máximo de la imagen */
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    .card p {
+        font-size: 16px;
+        margin: 10px 0;
+        /* Añade espacio en la parte superior e inferior */
+        padding: 0;
+    }
+    
+    @media screen and (max-width: 992px) {
+        .card {
+            flex-basis: calc(33.3333% - 10px);
+            /* Reducimos el tamaño de las tarjetas para que quepan tres en una fila en pantallas más pequeñas */
+        }
+    }
+    
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000000;
+        /* Un color bonito, puedes cambiarlo si lo deseas */
+        margin: 20px 0;
+        /* Añade un espacio alrededor del h2 */
+        text-align: center;
+        /* Centra el h2 */
+    }
+    /* Estilo para la sección personalizada */
+    /* Estilo para la sección personalizada */
+    
+    .seccion-per {
+        display: flex;
+        align-items: center;
+        background-color: #f2f2f2;
+        /* Color de fondo gris */
+        padding: 20px;
+        border-radius: 10px;
+    }
+    /* Estilo para la seccion dos de la segunda imagen  */
+    
+    .seccion-per2 {
+        display: flex;
+        align-items: center;
+        background-color: #f2f2f2;
+        /* Color de fondo gris */
+        padding: 20px;
+        border-radius: 10px;
+    }
+    /* Estilo para la seccion tres de la tercera imagen  */
+    
+    .seccion-per3 {
+        display: flex;
+        align-items: center;
+        background-color: #f2f2f2;
+        /* Color de fondo gris */
+        padding: 20px;
+        border-radius: 10px;
+    }
+    /* Estilo para la información del lado izquierdo */
+    
+    .info {
+        flex: 1;
+        padding: 60px;
+    }
+    
+    .info h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .info h3 span {
+        color: #000000;
+        /* Color de acento para el span */
+    }
+    
+    .info h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: justify;
+        /* Justificar el texto */
+    }
+    
+    .info p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    /* Estilo para la imagen del lado derecho */
+    
+    .seccion-per img {
+        max-width: 700px;
+        /* Ajusta el tamaño máximo de la imagen */
+        margin-left: 20px;
+        /* Espacio entre la imagen y el texto */
+    }
+    
+    .seccion-per2 img {
+        max-width: 700px;
+        /* Ajusta el tamaño máximo de la imagen */
+        margin-left: 20px;
+        /* Espacio entre la imagen y el texto */
+    }
+    
+    .seccion-per3 img {
+        max-width: 700px;
+        /* Ajusta el tamaño máximo de la imagen */
+        margin-left: 20px;
+        /* Espacio entre la imagen y el texto */
+    }
