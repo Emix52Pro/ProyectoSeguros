@@ -9,6 +9,10 @@ import { AutomovilesComponent } from './components/automoviles/automoviles.compo
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { PlanesPersonasComponent } from './components/planes-personas/planes-personas.component';
 import { PlanesAutomovilesComponent } from './components/planes-automoviles/planes-automoviles.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,12 +24,15 @@ import { PlanesAutomovilesComponent } from './components/planes-automoviles/plan
     AutomovilesComponent,
     QuienesSomosComponent,
     PlanesPersonasComponent,
-    PlanesAutomovilesComponent
+    PlanesAutomovilesComponent,
+    LoginComponent,
+    RegisterComponent
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

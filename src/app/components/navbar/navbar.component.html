@@ -8,18 +8,18 @@
     <ul class="group-list">
         <li class="list-item">
             <a [routerLink]="['personas']" routerLinkActive="active">
-                    Personas
-                </a>
+          Personas
+        </a>
         </li>
         <li class="list-item">
             <a [routerLink]="['automoviles']" routerLinkActive="active">
-                    Automoviles
-                </a>
+          Automoviles
+        </a>
         </li>
         <li class="list-item">
             <a [routerLink]="['quienes-somos']" routerLinkActive="active">
-                    Quienes somos
-                </a>
+          Quienes somos
+        </a>
         </li>
         <li class="list-item">
             <a class="servicios" href="#">Planes</a>
@@ -28,6 +28,6 @@
                 <li><a [routerLink]="['planes-automoviles']" routerLinkActive="active">Automoviles</a></li>
             </ul>
         </li>
-        <button id="btn-ingresar">Ingresar</button>
+        <button [routerLink]="['login']" routerLinkActive="active" id="btn-ingresar">Ingresar</button>
     </ul>
 </nav>

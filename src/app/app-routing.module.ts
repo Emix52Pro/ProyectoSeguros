@@ -7,10 +7,13 @@ import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.
 import { PlanesPersonasComponent } from './components/planes-personas/planes-personas.component';
 import { PlanesAutomovilesComponent } from './components/planes-automoviles/planes-automoviles.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 const routes: Routes = [
   {path:'personas', component: PersonasComponent},
-
+  {path:'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
  
   {path:'automoviles', component: AutomovilesComponent},
   {path: 'quienes-somos', component: QuienesSomosComponent},
