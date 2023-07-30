@@ -20,7 +20,6 @@ export class FiltrarSegurosPipe implements PipeTransform {
           seguros.push(seguro);
         }
     }
-    console.log(seguros.length);
     return seguros;
   }
 

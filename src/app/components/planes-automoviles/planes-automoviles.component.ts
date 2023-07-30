@@ -12,7 +12,6 @@ marca:string="";
 anio:number=0;
 modelo:string="";
 vehiculo:any;
-validar:boolean=false;
 //Arreglos
 vehiculos:Vehiculo[]=[];
 modelos:string[]=[];
@@ -26,8 +25,6 @@ cargarDatos(){
   this.obtenerAnios();
 }
 
-
-
 obtenerVehiculo(){
   if(this.marca!="" && this.anio!=0 && this.modelo!=""){
     let ob:Vehiculo={
@@ -36,7 +33,6 @@ obtenerVehiculo(){
       anio:this.anio
      }
      this.vehiculo=ob;
-     this.automovilesService.vehiculoAuxiliar=ob;
   }
 }
 
@@ -61,6 +57,7 @@ obtenerAnios(){
   
   }
 }
+
 ngOnInit():void{
   this.vehiculos=this.automovilesService.getVehiculos();
   this.modelos=this.automovilesService.getModelos();
@@ -68,7 +65,6 @@ ngOnInit():void{
   this.seguros=this.automovilesService.getSeguros();
 
   }
-  
   
   constructor(private automovilesService: AutomovilesService){
     if (this.vehiculo) {
@@ -78,8 +74,6 @@ ngOnInit():void{
     }
 
   }
-  
-  
   }
 
 

@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AutomovilesService {
-//Variables
-vehiculoAuxiliar:any;
 //Arreglo de marcas
 marcas=["Audi", "Chevrolet"];
 //Arreglo de modelos
@@ -143,9 +141,6 @@ getSeguros(){
 }
 
   constructor() { }
-
-
-
 }
 //Interfaces
 export interface Vehiculo{
