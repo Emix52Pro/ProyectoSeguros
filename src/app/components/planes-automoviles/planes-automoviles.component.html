@@ -1,1 +1,48 @@
-<p>planes-automoviles works!</p>
+<div class="grid-container">
+    <div class="grid">
+        <form>
+            <section>
+                <label for="marca">Seleccione una marca</label>
+                <select [(ngModel)]="marca" name="marca" id="marca" (ngModelChange)="cargarDatos()">
+                    <option value=""></option>
+                        <option *ngFor="let marca of marcas;" >{{marca}}  </option>
+                    </select>
+            </section>
+
+            <section>
+                <label for="modelo">Seleccione un modelo</label>
+                <select name="modelo" id="modelo" [(ngModel)]="modelo" name="modelo" (ngModelChange)="cargarDatos()">
+                    <option value=""></option>
+                    <option  *ngFor="let modelo of modelos_filtro;"  >{{modelo}}</option>
+                    </select>
+            </section>
+
+            <section>
+                <label for="anio">Seleccione el año</label>
+                <select name="anio" id="anio" [(ngModel)]="anio">
+                    <option value=""></option>
+                        <option *ngFor="let anio of anios_filtro" >{{anio}}</option>
+                    </select>
+            </section>
+            <button (click)="obtenerVehiculo()"> Ver seguros </button>
+        </form>
+
+
+        <div class="contenedor">
+            <div class="recuadro" *ngFor="let seguro of seguros|filtrarSeguros:vehiculo">
+                <div class="logo">
+                    <img [src]="seguro.aseguradora.imagen" alt="Logo de la empresa">
+                </div>
+                <div class="info">
+                    <h2>{{seguro.aseguradora.nombre}}</h2>
+                    <p>{{seguro.aseguradora.descripcion}}</p>
+                </div>
+                <div class="acciones">
+                    <p>Precio:</p>
+                    <button routerLinkActive="active" routerLink="/planes-personas">Cotizar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
