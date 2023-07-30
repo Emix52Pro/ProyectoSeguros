@@ -74,7 +74,10 @@ ngOnInit():void{
     }
 
   }
+
   }
+  
+
 
 
 

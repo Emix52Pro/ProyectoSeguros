@@ -1,56 +1,29 @@
-<!-- Botones para filtrar empresas -->
-<button type="button" class="btn btn-primary btn-lg" (click)="verTodos()">Todos</button>
-<button type="button" class="btn btn-primary btn-lg" (click)="verNacionales()">Nacionales</button>
-<button type="button" class="btn btn-primary btn-lg" (click)="verInternacionales()">Internacionales</button>
-
 <div class="container">
     <h1>Empresas Aseguradoras</h1>
     <p>En SegurosPlus nos preocupamos por tu bienestar y el de tus seres queridos. Ofrecemos una variedad de planes de seguros de vida para proteger lo que más te importa. Explora las opciones que tenemos disponibles:</p>
     <div class="video-container">
         <video width="100%" controls>
-      <source src="../../../assets/adaptacion.mp4" type="video/mp4">
-      Tu navegador no soporta el elemento de video.
-    </video>
+          <source src="../../../assets/adaptacion.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
     </div>
     <div class="empresas">
-        <!--Esto hace que se muestren las nacionales-->
-        <ng-container *ngIf="empresasNacionales.length > 0">
-            <ng-container *ngFor="let empresa of empresasNacionales; let i = index">
-                <div class="empresa-card">
-                    <img [src]="empresa.logoUrl" [alt]="empresa.nombre">
-                    <h2>{{ empresa.nombre }}</h2>
-                    <div class="planes">
-                        <div class="plan-card" *ngFor="let plan of empresa.planes">
-                            <h3>{{ plan.nombre }}</h3>
-                            <p>{{ plan.descripcion }}</p>
-                            <p class="precio">{{ plan.precio | currency }}</p>
-                            <a href="#">Solicitar</a>
-                        </div>
+        <ng-container *ngFor="let empresa of empresas; let i = index">
+            <div class="empresa-card">
+                <img [src]="empresa.logoUrl" [alt]="empresa.nombre">
+                <h2>{{ empresa.nombre }}</h2>
+                <div class="planes">
+                    <div class="plan-card" *ngFor="let plan of empresa.planes">
+                        <h3>{{ plan.nombre }}</h3>
+                        <p>{{ plan.descripcion }}</p>
+                        <p class="precio">{{ plan.precio | currency }}</p>
+                        <a href="#">Solicitar</a>
                     </div>
                 </div>
-                <!-- Agregar un salto de línea después de cada dos empresas -->
-                <div *ngIf="(i + 1) % 2 === 0" class="break"></div>
-            </ng-container>
-        </ng-container>
+            </div>
 
-        <!--Esto hace que se muestren las internacionales-->
-        <ng-container *ngIf="empresasInternacionales.length > 0">
-            <ng-container *ngFor="let empresa of empresasInternacionales; let i = index">
-                <div class="empresa-card">
-                    <img [src]="empresa.logoUrl" [alt]="empresa.nombre">
-                    <h2>{{ empresa.nombre }}</h2>
-                    <div class="planes">
-                        <div class="plan-card" *ngFor="let plan of empresa.planes">
-                            <h3>{{ plan.nombre }}</h3>
-                            <p>{{ plan.descripcion }}</p>
-                            <p class="precio">{{ plan.precio | currency }}</p>
-                            <a href="#">Solicitar</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Agregar un salto de línea después de cada dos empresas -->
-                <div *ngIf="(i + 1) % 2 === 0" class="break"></div>
-            </ng-container>
+            <!-- Agregar un salto de línea después de cada dos empresas -->
+            <div *ngIf="(i + 1) % 2 === 0" class="break"></div>
         </ng-container>
     </div>
 </div>
