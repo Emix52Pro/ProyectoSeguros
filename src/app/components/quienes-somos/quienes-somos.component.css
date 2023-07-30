@@ -37,12 +37,14 @@
     padding: 20px;
 }
 
-.hero-frase h1 {
+
+.hero-frase h1{
     padding: 0;
     margin: 0;
 }
 
-.hero-frase p {
+
+.hero-frase p{
     color: #fff;
     padding: 0;
     margin: 0;
@@ -97,6 +99,7 @@
 }
 
 
+=======
 /* Secciones */
 
 .seccion {
@@ -104,7 +107,8 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.seccion-1 {
+
+.seccion-1{
     background-color: #D9D9D9;
 }
 
@@ -130,6 +134,7 @@
     margin: 0;
 }
 
+
 .info p {
     text-align: justify;
     margin: 0;
@@ -147,12 +152,14 @@
     .info {
         font-size: 10px !important;
     }
+
     .seccion {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 1fr 1fr;
     }
-    .seccion-2 {
+
+    .seccion-2{
         display: flex;
         gap: 20px;
         flex-direction: column-reverse;
