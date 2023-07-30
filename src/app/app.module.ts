@@ -12,6 +12,7 @@ import { PlanesAutomovilesComponent } from './components/planes-automoviles/plan
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { FiltrarSegurosPipe } from './pipes/filtrar-seguros.pipe';
 
 
 
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     PlanesPersonasComponent,
     PlanesAutomovilesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FiltrarSegurosPipe
   
   ],
   imports: [
